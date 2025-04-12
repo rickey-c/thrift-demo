@@ -19,9 +19,7 @@ public class ThreadedSelectorClient {
                 public void run() {
                     // 设置传输通道 对于非阻塞服务 需要使用TFramedTransport(用于将数据分块发送)
                     for (int j = 0; j < 10; j++) {
-                        TTransport transport = null;
-                        try {
-                            transport = new TFramedTransport(new TSocket("localhost",9090));
+                        try (TTransport transport = new TFramedTransport(new TSocket("localhost", 9090))) {
                             TProtocol protocol = new TBinaryProtocol(transport);
                             UserService.Client client = new UserService.Client(protocol);
                             transport.open();
@@ -30,10 +28,8 @@ public class ThreadedSelectorClient {
                             transport.close();
                         } catch (Exception e) {
                             e.printStackTrace();
-                        } finally {
-                            // 关闭传输通道
-                            transport.close();
                         }
+                        // 关闭传输通道
                     }
                 }
             }.start();
