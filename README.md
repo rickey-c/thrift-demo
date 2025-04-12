@@ -49,7 +49,8 @@ thrift-demo/
 
 1. [官方文档](https://thrift.apache.org/docs/)
 2. [Thrift 知乎精选问答](https://zhuanlan.zhihu.com/p/45194187)(模型篇讲的十分清晰)
-3. [Thrift 笔记](https://www.notion.so/Thrift-1d0205d58c7380e5a8b2f670e069b608?pvs=4)
+3. [美团技术文章](https://tech.meituan.com/tags/thrift.html)
+4. [Thrift 笔记](https://www.notion.so/Thrift-1d0205d58c7380e5a8b2f670e069b608?pvs=4)
 
 ## 贡献指南
 
